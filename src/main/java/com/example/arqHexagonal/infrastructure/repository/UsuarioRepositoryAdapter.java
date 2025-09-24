@@ -6,7 +6,6 @@ import com.example.arqHexagonal.domain.dto.UsuarioResponse;
 import com.example.arqHexagonal.domain.ports.out.UsuarioPortOut;
 import com.example.arqHexagonal.infrastructure.entity.UsuarioEntity;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 @Component
@@ -18,7 +17,7 @@ public class UsuarioRepositoryAdapter implements UsuarioPortOut {
     }
 
     @Override
-    public ResponseBase<UsuarioResponse> createUsuarioOut(UsuarioCreateDto usuarioCreateDto) {
+    public ResponseBase createUsuarioOut(UsuarioCreateDto usuarioCreateDto) {
         UsuarioEntity usuarioEntity = new UsuarioEntity(
                 usuarioCreateDto.getUsername(),
                 usuarioCreateDto.getPassword(),
@@ -30,16 +29,16 @@ public class UsuarioRepositoryAdapter implements UsuarioPortOut {
                 usuarioEntity.getUsername(),
                 usuarioEntity.getCity()
         );
-        return new ResponseBase<>(200, "Exito", Optional.of(usuarioResponse));
+        return new ResponseBase(200, "Exito", Optional.of(usuarioResponse));
     }
 
     @Override
-    public ResponseBase<UsuarioResponse> findUsuarioByIdOut(int id) {
+    public ResponseBase findUsuarioByIdOut(int id) {
         return null;
     }
 
     @Override
-    public ResponseBase<Boolean> deleteUsuarioByIdOut(int id) {
+    public ResponseBase deleteUsuarioByIdOut(int id) {
         return null;
     }
 }

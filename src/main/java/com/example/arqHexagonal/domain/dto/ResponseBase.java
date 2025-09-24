@@ -1,13 +1,17 @@
 package com.example.arqHexagonal.domain.dto;
 
-import java.util.Optional;
+import lombok.Getter;
+import lombok.Setter;
 
-public class ResponseBase<T> {
+import java.util.Optional;
+@Getter
+@Setter
+public class ResponseBase {
     private int code;
     private String message;
-    private Optional<T> data;
+    private Optional<Object> data;
 
-    public ResponseBase(int code, String message, Optional<T> data) {
+    public ResponseBase(int code, String message, Optional<Object> data) {
         this.code = code;
         this.message = message;
         this.data = data;

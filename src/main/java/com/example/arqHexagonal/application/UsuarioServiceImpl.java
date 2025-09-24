@@ -2,7 +2,7 @@ package com.example.arqHexagonal.application;
 
 import com.example.arqHexagonal.domain.dto.ResponseBase;
 import com.example.arqHexagonal.domain.dto.UsuarioCreateDto;
-import com.example.arqHexagonal.domain.dto.UsuarioResponse;
+import com.example.arqHexagonal.domain.dto.UsuarioUpdateDto;
 import com.example.arqHexagonal.domain.ports.in.UsuarioPortIn;
 import com.example.arqHexagonal.domain.ports.out.UsuarioPortOut;
 import org.springframework.stereotype.Service;
@@ -16,7 +16,7 @@ public class UsuarioServiceImpl implements UsuarioPortIn {
     }
 
     @Override
-    public ResponseBase<UsuarioResponse> createUsuario(UsuarioCreateDto usuarioCreateDto) {
+    public ResponseBase createUsuario(UsuarioCreateDto usuarioCreateDto) {
         // validar el password
         // convertir a mayuscula la ciudad
         String regex = "^(?=.*[A-Z])(?=.*\\d)(?=.*[^a-zA-Z0-9]).+$";
@@ -30,12 +30,17 @@ public class UsuarioServiceImpl implements UsuarioPortIn {
     }
 
     @Override
-    public ResponseBase<UsuarioResponse> findUsuarioById(int id) {
+    public ResponseBase findUsuarioById(int id) {
         return null;
     }
 
     @Override
-    public ResponseBase<Boolean> deleteUsuarioById(int id) {
+    public ResponseBase deleteUsuarioById(int id) {
+        return null;
+    }
+
+    @Override
+    public ResponseBase updateUsuarioById(int id, UsuarioUpdateDto usuarioUpdateDto) {
         return null;
     }
 }
